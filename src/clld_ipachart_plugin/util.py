@@ -14,9 +14,9 @@ def load_inventories(cldf, clts, languages):
     """
     inventories = collections.defaultdict(set)
     for form in cldf.iter_rows(
-            'FormTable', 'id', 'form', 'languageReference', 'parameterReference'):
+            'FormTable', 'id', 'form', 'languageReference', 'parameterReference', 'segments'):
         inventories[form['languageReference']] = inventories[form['languageReference']].union(
-            form['Segments'])
+            form['segments'])
 
     for lid, inv in inventories.items():
         inv = [clts.bipa[c] for c in inv]
