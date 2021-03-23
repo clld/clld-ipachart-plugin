@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='clld-ipachart-plugin',
-    version='0.1.0.dev0',
+    version='0.1.0',
     description='clld-ipachart-plugin',
     classifiers=[
         "Programming Language :: Python",
