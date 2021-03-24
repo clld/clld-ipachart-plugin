@@ -9,7 +9,7 @@ A plugin for the [`clld`](https://pypi.org/project/clld) package.
 ## Usage
 
 `clld-ipachart-plugin` provides
-- A model mixin [`clld_audio_plugin.models.InventoryMixin`](src/clld_ipachart_plugin/models.py)
+- A model mixin [`clld_ipachart_plugin.models.InventoryMixin`](src/clld_ipachart_plugin/models.py)
   providing functionality to render IPA chart components.
-- A utility function [`clld_ipachart_plugin.util.load_inventories`](src/clld_ipachart_plugin/util.py)
+- Utility functions [`clld_ipachart_plugin.util.*`](src/clld_ipachart_plugin/util.py)
   to load inventory data from segmented forms of a CLDF Wordlist.
