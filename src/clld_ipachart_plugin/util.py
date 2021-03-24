@@ -1,6 +1,21 @@
+import pathlib
 import collections
 
-__all__ = ['load_inventories']
+from pyclts import CLTS
+
+__all__ = ['load_inventories', 'clts_from_input']
+
+
+def clts_from_input(default_path):
+    """
+    Get a CLTS instance for a path specified by the user.
+
+    :param default_path: Path to use in case of empty user input.
+    :return: `CLTS` instance.
+    """
+    default_path = pathlib.Path(default_path)
+    res = input('Path to clone of cldf-clts/clts [{}]: '.format(str(default_path)))
+    return CLTS(pathlib.Path(res) if res else default_path)
 
 
 def load_inventories(cldf, clts, languages):
