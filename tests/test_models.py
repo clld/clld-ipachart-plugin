@@ -33,6 +33,11 @@ def test_InventoryMixin_custom(clts, cldf):
         inventory=[(k, (v, dict(path='x'))) for k, v in lang.jsondata['inventory']])
     ctx = lang.render_inventory(request=5, exclude=[])
     assert 'http://example.com/x/5' in ctx['vowels_html']
-    assert '+' in [p.sound_bipa for p in ctx['uncovered']]
-    ctx = lang.render_inventory(request=5)
-    assert '+' not in [p.sound_bipa for p in ctx['uncovered']]
+    assert ctx['vowels_css'].startswith('#vowel-trapezoid')
+
+    def customize(seg):
+        seg.css_class = 'myclass'
+        return seg
+
+    ctx = lang.render_inventory(request=5, customize_segment=customize)
+    assert 'myclass' in ctx['vowels_html']

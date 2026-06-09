@@ -21,3 +21,9 @@ def test_load_inventories(clts, cldf):
     lang = Language()
     load_inventories(cldf, clts, {'1': lang})
     assert 'a' in dict(lang.jsondata['inventory'])
+
+
+def test_load_inventories_from_db(clts, cldf_db):
+    lang = Language()
+    load_inventories(cldf_db, clts, {'1': lang})
+    assert 'a' in dict(lang.jsondata['inventory'])

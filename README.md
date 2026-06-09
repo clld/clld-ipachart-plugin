@@ -10,6 +10,8 @@ A plugin for the [`clld`](https://pypi.org/project/clld) package.
 
 `clld-ipachart-plugin` provides
 - A model mixin [`clld_ipachart_plugin.models.InventoryMixin`](src/clld_ipachart_plugin/models.py)
-  providing functionality to render IPA chart components.
+  providing functionality to render IPA chart components. Typically, an app's `Language` subclass
+  will inherit from `InventoryMixin`.
 - Utility functions [`clld_ipachart_plugin.util.*`](src/clld_ipachart_plugin/util.py)
-  to load inventory data from segmented forms of a CLDF Wordlist.
+  to load inventory data from segmented forms of a CLDF Wordlist. `load_inventories` will store
+  inventory data in `Language.jsondata`, in the way expected by `InventoryMixin.render_inventory`.
